@@ -1,0 +1,31 @@
+// Colors
+.primary-color {
+    color: $primary_color;
+}
+.secondary-color {
+    color: $secondary_color;
+}
+
+// Commons style classes
+.main-content {
+    background-color: $light-grey;
+    min-height: calc(100vh - 132px);
+}
+
+
+// Additionals
+.slot-price {
+    color: $secondary_color;
+    position: absolute;
+    left: 10px;    
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 500;
+
+    & ~ .generic-input__input {
+        padding-left: 40px;
+    }
+}
+.generic-input .input-container {
+    position: relative;
+}

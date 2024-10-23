@@ -1,0 +1,21 @@
+.custom-search-input { 
+
+    .search-box {        
+        background-color: #fff;
+        border-radius: 50px;
+    }      
+    
+    .search-input {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0 7px;
+        font-size: 16px;
+        transition: 0.4s;
+        font-family: 'Montserrat';
+        line-height: 36px;
+        text-indent: 10px;  
+        width: 200px;      
+    }   
+}
