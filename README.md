@@ -1,4 +1,4 @@
-# vue-simple-ui
+# vue-simple-ui-components
 Library of components, written in Vue.js
 
 &nbsp;
