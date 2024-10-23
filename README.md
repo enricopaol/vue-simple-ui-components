@@ -5,22 +5,22 @@ Library of components, written in Vue.js
 ## Installation
 
 ```
-npm install vue-simple-ui
+npm install vue-simple-ui-components
 ```
 
 Then import like this: 
 ```js
-import { ComponentName } from "vue-simple-ui";
+import { ComponentName } from "vue-simple-ui-components";
 ```
 
 Also add the styles in App.vue or in other place to be used globally on the project:
 ```js
-import "vue-simple-ui/dist/style.css"; 
+import "vue-simple-ui-components/dist/style.css"; 
 ```
 
 This library is meant to be used with Tailwindcss, so add also this style globally:
 ```js
-import "vue-simple-ui/dist/output.css";
+import "vue-simple-ui-components/dist/output.css";
 ```
 
 ---
