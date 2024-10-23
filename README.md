@@ -565,6 +565,152 @@ type of result do you want to obtain.
 | resultType | string | The type of data you want the component to return. Options are: ['formatted', 'original']. Original returns an object with the original value, the formatted value and the type (date, time, datetime). Formatted options returns a string or an array of strings, in the format "yyyy-mm-dd H:i:s".| false |
 | value | string or Array of strings | The value input of the component, passed also by v-model. Depending on the previous options i a string or an array: with "time" type the format is "22:12:00"; with "date" type the format is "2022-12-31"; with "datetime" format is "2022-12-31 23:59:59"| true |
 
+&nbsp;
+
+## 16. Breadcrumbs
+BreadCrumbs.
+
+```html
+<div class="mb-2 ml-1 ">
+    <breadcrumbs :path_breadcrumbs="path_breadcrumbs" />
+</div>				
+```
+
+#### Props:
+| Name | Type | Description | Required |
+| ---- | -------| --- | --- |
+| path_breadcrumbs | Array of BreadcrumbInterface | Array that represents the path. | true |
+
+
+#### Types:
+1. BreadcrumbInterface:   
+
+    ```
+    {
+        label : string,
+	    path : string,
+    }
+    ```
+
+&nbsp;
+
+## 17. FormSeparator
+Is an ``` <hr /> ``` tag  styled to be in FormContainer component.
+
+```html
+<form-separator />				
+```
+
+&nbsp;
+
+## 18. FormContainer
+Container for the forms.
+
+```html
+<form-container			
+    title="Nuovo cliente"
+    :path_breadcrumbs="[
+        {
+            label: 'Home',
+            path: {
+                name: 'home'
+            }
+        },
+        {
+            label: 'Anagrafiche',							
+        },
+        {
+            label: 'Clienti',	
+            path: {
+                name: 'anagraphics.clients.index'
+            }						
+        },
+        {
+            label: 'Nuovo cliente',							
+        }
+    ]"
+>
+    <template v-slot:form-buttons-top>
+        <div class="flex my-6 ml-1">
+            <custom-button
+                label="Salva"
+                styleType="primary-outline"
+                size="default"
+            />
+
+            <div class="ml-5">
+                <custom-button
+                    label="Chiudi"
+                    styleType="primary-outline"
+                    size="default"
+                />
+            </div>
+        </div>						
+    </template>	
+
+    <template v-slot:form-content>
+        <div class="grid grid-cols-12 gap-6">
+            <div class="col-span-6">
+                <generic-input
+                    type="text"
+                    placeholder="Inserisci codice cliente"
+                    label="Codice Cliente"	
+                    v-model="formData.customer_code"
+                />
+            </div>
+            <div class="col-span-6">
+                <generic-input
+                    type="text"
+                    placeholder="Inserisci codice fatturazione cliente"
+                    label="Codice fatturazione cliente"	
+                    v-model="formData.invoice_code"
+                />
+            </div>
+
+            <div class="col-span-6">
+                <generic-input
+                    type="text"
+                    placeholder="Inserisci codice cliente"
+                    label="Codice Cliente"	
+                    v-model="formData.customer_code"
+                />
+            </div>
+            <div class="col-span-6">
+                <generic-input
+                    type="text"
+                    placeholder="Inserisci codice fatturazione cliente"
+                    label="Codice fatturazione cliente"	
+                    v-model="formData.invoice_code"
+                />
+            </div>
+        </div>
+    </template>
+</form-container>				
+```
+
+#### Props:
+| Name | Type | Description | Required |
+| ---- | -------| --- | --- |
+| path_breadcrumbs | Array of BreadcrumbInterface. If not specified is not displayed.  | Array that represents the path. | false |
+| title | string | Title of the form. If not specified is not displayed. | false |
+
+#### Types:
+1. BreadcrumbInterface:   
+
+    ```
+    {
+        label : string,
+	    path : string,
+    }
+    ```
+#### Slots:
+1. "form-buttons-top": Above the form
+2. "form-buttons-top": Below the form
+3. "form-content": Inside the form
+
+
+&nbsp;
+
 #### Events:
 1. update: when update of the value, if the prop "resultType" is "original".
 
